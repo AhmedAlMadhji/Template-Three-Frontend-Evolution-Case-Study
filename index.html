@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Madhj| Template Three</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
 
     <!-- Render All Element Normally -->
     <link rel="stylesheet" href="Css/Normlazi.css">
@@ -19,23 +21,30 @@
     <!-- Link of Open Sans font-family from Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Premium visual layer -->
+    <link rel="stylesheet" href="Css/premium.css">
+    <!-- Showcase polish — portfolio-grade refinement -->
+    <link rel="stylesheet" href="Css/showcase.css">
 </head>
 
 <body>
     <header id="header">
         <div class="container">
-            <a href="#" class="logo">Madhj</a>
+            <a href="#header" class="logo">Madhj</a>
             <ul class="main-nav">
                 <li><a href="#Articles">articles</a></li>
                 <li><a href="#Gallery">gallery</a></li>
                 <li><a href="#Features">features</a></li>
-                <li>
-                    <a href="#">Other links</a>
+                <li class="mega-nav-item">
+                    <a href="#" id="mega-menu-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="mega-menu-panel">
+                        More <span class="sr-only">links</span>
+                    </a>
                     <!-- Start Megamenu -->
-                    <div class="mega-menu">
+                    <div class="mega-menu" id="mega-menu-panel" role="region" aria-label="Other page sections">
                         <div class="image">
-                            <img src="images/megamenu.png" alt="" />
+                            <img src="images/megamenu.png" alt="Mega menu illustration" />
                         </div>
                         <ul class="links">
                             <li>
@@ -70,6 +79,9 @@
                             <li>
                                 <a href="#discount"><i class="fas fa-percent fa-fw"></i> Request A Discount</a>
                             </li>
+                            <li>
+                                <a href="#case-study"><i class="fas fa-book fa-fw"></i> Case Study</a>
+                            </li>
                         </ul>
                     </div>
                     <!-- End Megamenu -->
@@ -78,114 +90,142 @@
         </div>
     </header>
     <main>
-        <section class="landing">
+        <section class="landing" id="landing">
+            <div class="hero-bg" aria-hidden="true">
+                <span class="hero-grid"></span>
+                <span class="hero-orb hero-orb--1"></span>
+                <span class="hero-orb hero-orb--2"></span>
+                <span class="hero-orb hero-orb--3"></span>
+            </div>
             <div class="container">
-                <div class="text">
-                    <h1>Welcome, To Madhj World</h1>
+                <div class="text reveal">
+                    <span class="hero-badge">Frontend Portfolio · 2026</span>
+                    <h1>Welcome, To <span class="gradient-text">Madhj</span> World</h1>
                     <p>Here Iam gonna share everything about my life. Books Iam reading, Games Iam Playing, Stories and
                         Events</p>
+                    <div class="hero-actions">
+                        <a href="#Articles" class="btn btn-primary">Explore Articles</a>
+                        <a href="#case-study" class="btn btn-outline">View Case Study</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <strong>14+</strong>
+                            <span>Sections</span>
+                        </div>
+                        <div class="hero-stat">
+                            <strong>100%</strong>
+                            <span>Responsive</span>
+                        </div>
+                        <div class="hero-stat">
+                            <strong>0</strong>
+                            <span>Frameworks</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="image">
-                    <img src="images/landing-image.png" alt="">
+                    <img src="images/landing-image.png" alt="Illustration welcoming visitors to Madhj World">
                 </div>
             </div>
-            <a href="#Articles" class="go-down">
+            <a href="#Articles" class="go-down" aria-label="Scroll to articles section">
                 <i class="fas fa-angle-double-down fa-2x"></i>
             </a>
         </section>
-        <div class="up">
-            <a href="#header">
-                <i class="fas fa-angle-double-up fa-2x"></i>
-            </a>
-        </div>
         <section class="articles padding-section" id="Articles">
-            <h2 class="main-heading">articles</h2>
-            <div class="container">
-                <div class="card">
-                    <img src="images/cat-01.jpg" alt="" />
+            <span class="section-eyebrow reveal">Latest Stories</span>
+            <h2 class="main-heading reveal">articles</h2>
+            <div class="articles-filters" role="tablist" aria-label="Filter articles by category">
+                <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button type="button" class="filter-btn" data-filter="tech" role="tab" aria-selected="false">Tech</button>
+                <button type="button" class="filter-btn" data-filter="art" role="tab" aria-selected="false">Art</button>
+                <button type="button" class="filter-btn" data-filter="games" role="tab" aria-selected="false">Games</button>
+                <button type="button" class="filter-btn" data-filter="lifestyle" role="tab" aria-selected="false">Lifestyle</button>
+            </div>
+            <div class="container reveal-stagger">
+                <div class="card" data-category="tech">
+                    <img src="images/cat-01.jpg" alt="Article thumbnail — technology topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-02.jpg" alt="" />
+                <div class="card" data-category="art">
+                    <img src="images/cat-02.jpg" alt="Article thumbnail — art topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-01.jpg" alt="" />
+                <div class="card" data-category="tech">
+                    <img src="images/cat-01.jpg" alt="Article thumbnail — technology topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-01.jpg" alt="" />
+                <div class="card" data-category="games">
+                    <img src="images/cat-01.jpg" alt="Article thumbnail — games topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-05.jpg" alt="" />
+                <div class="card" data-category="lifestyle">
+                    <img src="images/cat-05.jpg" alt="Article thumbnail — lifestyle topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-06.jpg" alt="" />
+                <div class="card" data-category="art">
+                    <img src="images/cat-06.jpg" alt="Article thumbnail — art topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-07.jpg" alt="" />
+                <div class="card" data-category="tech">
+                    <img src="images/cat-07.jpg" alt="Article thumbnail — technology topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="images/cat-08.jpg" alt="" />
+                <div class="card" data-category="games">
+                    <img src="images/cat-08.jpg" alt="Article thumbnail — games topic" />
                     <div class="content">
                         <h3>Test Title</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit</p>
                     </div>
                     <div class="info">
-                        <a href="">Read More</a>
+                        <a href="#Articles">Read More</a>
                         <i class="fas fa-long-arrow-alt-right"></i>
                     </div>
                 </div>
@@ -193,70 +233,74 @@
         </section>
         <div class="spikes"></div>
         <section class="gallery padding-section" id="Gallery">
-            <h2 class="main-heading">Gallery</h2>
-            <div class="container">
+            <span class="section-eyebrow section-eyebrow--light reveal">Visual Work</span>
+            <h2 class="main-heading reveal">Gallery</h2>
+            <div class="container reveal-stagger">
                 <div class="box">
                     <div class="image">
-                        <img src="images/gallery-01.png" alt="" />
+                        <img src="images/gallery-01.png" alt="Gallery image 1" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
-                        <img src="images/gallery-02.png" alt="" />
+                        <img src="images/gallery-02.png" alt="Gallery image 2" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
-                        <img src="images/gallery-03.jpg" alt="" />
+                        <img src="images/gallery-03.jpg" alt="Gallery image 3" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
-                        <img src="images/gallery-04.png" alt="" />
+                        <img src="images/gallery-04.png" alt="Gallery image 4" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
-                        <img src="images/gallery-05.jpg" alt="" />
+                        <img src="images/gallery-05.jpg" alt="Gallery image 5" />
                     </div>
                 </div>
                 <div class="box">
                     <div class="image">
-                        <img src="images/gallery-06.png" alt="" />
+                        <img src="images/gallery-06.png" alt="Gallery image 6" />
                     </div>
                 </div>
             </div>
         </section>
         <section class="features padding-section" id="Features">
-            <h2 class="main-heading">Features</h2>
-            <div class="container">
+            <span class="section-eyebrow reveal">Core Values</span>
+            <h2 class="main-heading reveal">Features</h2>
+            <div class="container reveal-stagger">
                 <div class="box quality">
-                    <div class="img-holder"><img src="images/features-01.jpg" alt="" /></div>
+                    <div class="img-holder"><img src="images/features-01.jpg" alt="Quality feature illustration" /></div>
                     <h2>Quality</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima
                     </p>
-                    <a href="#">More</a>
+                    <a href="#Features">More</a>
                 </div>
                 <div class="box time">
-                    <div class="img-holder"><img src="images/features-02.jpeg" alt="" /></div>
+                    <div class="img-holder"><img src="images/features-02.jpeg" alt="Time feature illustration" /></div>
                     <h2>Time</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima
                     </p>
-                    <a href="#">More</a>
+                    <a href="#Features">More</a>
                 </div>
                 <div class="box passion">
-                    <div class="img-holder"><img src="images/features-03.jpg" alt="" /></div>
+                    <div class="img-holder"><img src="images/features-03.jpg" alt="Passion feature illustration" /></div>
                     <h2>Passion</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit harum hic veniam eligendi minima
                     </p>
-                    <a href="#">More</a>
+                    <a href="#Features">More</a>
                 </div>
+            </div>
         </section>
         <section class="testimonials padding-section" id="testimonials">
-            <h2 class="main-heading">Testimonials</h2>
-            <div class="container">
+            <span class="section-eyebrow reveal">Client Voices</span>
+            <h2 class="main-heading reveal">Testimonials</h2>
+            <div class="container reveal-stagger">
                 <div class="box">
-                    <img src="images/avatar-01.png" alt="" />
+                    <img src="images/avatar-01.png" alt="Portrait of Mohamed Farag" />
                     <h3>Mohamed Farag</h3>
                     <span class="title">Full Stack Developer</span>
                     <div class="rate">
@@ -273,7 +317,7 @@
                     </p>
                 </div>
                 <div class="box">
-                    <img src="images/avatar-02.jpg" alt="" />
+                    <img src="images/avatar-02.jpg" alt="Portrait of Mohamed Ibrahim" />
                     <h3>Mohamed Ibrahim</h3>
                     <span class="title">Full Stack Developer</span>
                     <div class="rate">
@@ -290,7 +334,7 @@
                     </p>
                 </div>
                 <div class="box">
-                    <img src="images/avatar-03.jpg" alt="" />
+                    <img src="images/avatar-03.jpg" alt="Portrait of Shady Nabil" />
                     <h3>Shady Nabil</h3>
                     <span class="title">Full Stack Developer</span>
                     <div class="rate">
@@ -307,7 +351,7 @@
                     </p>
                 </div>
                 <div class="box">
-                    <img src="images/avatar-04.jpg" alt="" />
+                    <img src="images/avatar-04.jpg" alt="Portrait of Amr Hendawy" />
                     <h3>Amr Hendawy</h3>
                     <span class="title">Full Stack Developer</span>
                     <div class="rate">
@@ -324,7 +368,7 @@
                     </p>
                 </div>
                 <div class="box">
-                    <img src="images/avatar-05.png" alt="" />
+                    <img src="images/avatar-05.png" alt="Portrait of Sherief Ashraf" />
                     <h3>Sherief Ashraf</h3>
                     <span class="title">Full Stack Developer</span>
                     <div class="rate">
@@ -341,7 +385,7 @@
                     </p>
                 </div>
                 <div class="box">
-                    <img src="images/avatar-06.jpg" alt="" />
+                    <img src="images/avatar-06.jpg" alt="Portrait of Osama Mohamed" />
                     <h3>Osama Mohamed</h3>
                     <span class="title">Full Stack Developer</span>
                     <div class="rate">
@@ -361,22 +405,23 @@
         </section>
         
         <section class="team padding-section" id="team">
-            <h2 class="main-heading">Team Members</h2>
-            <div class="container">
+            <span class="section-eyebrow reveal">The People</span>
+            <h2 class="main-heading reveal">Team Members</h2>
+            <div class="container reveal-stagger">
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-01.png" alt="" />
+                        <img src="images/avatar-01.png" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -388,18 +433,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-03.jpg" alt="" />
+                        <img src="images/avatar-03.jpg" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -411,18 +456,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-02.jpg" alt="" />
+                        <img src="images/avatar-02.jpg" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -434,18 +479,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-03.jpg" alt="" />
+                        <img src="images/avatar-03.jpg" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -457,18 +502,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-03.jpg" alt="" />
+                        <img src="images/avatar-03.jpg" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -480,18 +525,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-02.jpg" alt="" />
+                        <img src="images/avatar-02.jpg" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -503,18 +548,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-01.png" alt="" />
+                        <img src="images/avatar-01.png" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -526,18 +571,18 @@
                 </div>
                 <div class="box">
                     <div class="data">
-                        <img src="images/avatar-03.jpg" alt="" />
+                        <img src="images/avatar-03.jpg" alt="Team member portrait" />
                         <div class="social">
-                            <a href="#">
+                            <a href="#team" aria-label="Facebook profile">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="Twitter profile">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="LinkedIn profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="#team" aria-label="YouTube channel">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </div>
@@ -551,48 +596,49 @@
         </section>
         <div class="spikes"></div>
         <section class="services padding-section" id="services">
-            <h2 class="main-heading">Services</h2>
-            <div class="container">
+            <span class="section-eyebrow section-eyebrow--light reveal">What We Do</span>
+            <h2 class="main-heading reveal">Services</h2>
+            <div class="container reveal-stagger">
                 <div class="box">
                     <i class="fas fa-user-shield fa-4x"></i>
                     <h3>Security</h3>
                     <div class="info">
-                        <a href="#">Details</a>
+                        <a href="#services">Details</a>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fas fa-tools fa-4x"></i>
                     <h3>Fixing Issues</h3>
                     <div class="info">
-                        <a href="#">Details</a>
+                        <a href="#services">Details</a>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fas fa-map-marked-alt fa-4x"></i>
                     <h3>Location</h3>
                     <div class="info">
-                        <a href="#">Details</a>
+                        <a href="#services">Details</a>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fas fa-laptop-code fa-4x"></i>
                     <h3>Coding</h3>
                     <div class="info">
-                        <a href="#">Details</a>
+                        <a href="#services">Details</a>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fas fa-palette fa-4x"></i>
-                    <h3>Security</h3>
+                    <h3>Design</h3>
                     <div class="info">
-                        <a href="#">Design</a>
+                        <a href="#services">Details</a>
                     </div>
                 </div>
                 <div class="box">
                     <i class="fas fa-bullhorn fa-4x"></i>
                     <h3>Marketing</h3>
                     <div class="info">
-                        <a href="#">Details</a>
+                        <a href="#services">Details</a>
                     </div>
                 </div>
             </div>
@@ -600,7 +646,7 @@
         <section class="our-skills padding-section" id="our-skills">
             <h2 class="main-heading">Our Skills</h2>
             <div class="container">
-                <img src="images/skills.png" alt="" />
+                <img src="images/skills.png" alt="Skills section illustration" />
                 <div class="skills">
                     <div class="skill">
                         <h3>HTML</h3>
@@ -632,10 +678,10 @@
         <section class="work-steps padding-section" id="work-steps">
             <h2 class="main-heading">How It Works ?</h2>
             <div class="container">
-                <img src="images/work-steps.png" alt="" class="image" />
+                <img src="images/work-steps.png" alt="How it works overview illustration" class="image" />
                 <div class="info">
                     <div class="box">
-                        <img src="images/work-steps-1.png" alt="" />
+                        <img src="images/work-steps-1.png" alt="Business analysis step icon" />
                         <div class="text">
                             <h3>Business Analysis</h3>
                             <p>
@@ -646,7 +692,7 @@
                         </div>
                     </div>
                     <div class="box">
-                        <img src="images/work-steps-2.png" alt="" />
+                        <img src="images/work-steps-2.png" alt="Architecture step icon" />
                         <div class="text">
                             <h3>Architecture</h3>
                             <p>
@@ -657,9 +703,9 @@
                         </div>
                     </div>
                     <div class="box">
-                        <img src="images/work-steps-3.png" alt="" />
+                        <img src="images/work-steps-3.png" alt="Development step icon" />
                         <div class="text">
-                            <h3>Developement</h3>
+                            <h3>Development</h3>
                             <p>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim nesciunt obcaecati
                                 quisquam quis laborum
@@ -670,12 +716,12 @@
                 </div>
             </div>
         </section>
-        <section class="events padding-section" id="events">
+        <section class="events padding-section" id="events" data-countdown-end="2026-12-01T18:00:00">
             <div class="dots dots-up"></div>
             <div class="dots dots-down"></div>
             <h2 class="main-heading">Latest Events</h2>
             <div class="container">
-                <img src="images/events.png" alt="" />
+                <img src="images/events.png" alt="Latest events illustration" />
                 <div class="info">
                     <div class="time">
                         <div class="unit">
@@ -703,8 +749,10 @@
                     </p>
                 </div>
                 <div class="subscribe">
-                    <form action="">
-                        <input type="email" placeholder="Enter Your Email" />
+                    <p id="subscribe-form-message" class="form-message" aria-live="polite"></p>
+                    <form id="subscribe-form" action="#" method="post" novalidate>
+                        <label class="sr-only" for="subscribe-email">Email address</label>
+                        <input type="email" id="subscribe-email" name="email" placeholder="Enter Your Email" required />
                         <input type="submit" value="Subscribe" />
                     </form>
                 </div>
@@ -713,11 +761,12 @@
         <section class="pricing padding-section" id="pricing">
             <div class="dots dots-up"></div>
             <div class="dots dots-down"></div>
-            <h2 class="main-heading">Pricing Plans</h2>
-            <div class="container">
+            <span class="section-eyebrow section-eyebrow--light reveal">Plans</span>
+            <h2 class="main-heading reveal">Pricing Plans</h2>
+            <div class="container reveal-stagger">
                 <div class="box">
                     <div class="title">Basic</div>
-                    <img src="images/hosting-basic.png" alt="" />
+                    <img src="images/hosting-basic.png" alt="Basic hosting plan icon" />
                     <div class="price">
                         <span class="amount">$15</span>
                         <span class="time">Per Month</span>
@@ -729,12 +778,12 @@
                         <li>4 Databases</li>
                         <li>Basic Support</li>
                     </ul>
-                    <a href="#">Choose Plan</a>
+                    <a href="#pricing">Choose Plan</a>
                 </div>
                 <div class="box popular">
                     <div class="label">Most Popular</div>
                     <div class="title">Advanced</div>
-                    <img src="images/hosting-advanced.png" alt="" />
+                    <img src="images/hosting-advanced.png" alt="Advanced hosting plan icon" />
                     <div class="price">
                         <span class="amount">$25</span>
                         <span class="time">Per Month</span>
@@ -746,11 +795,11 @@
                         <li>8 Databases</li>
                         <li>Advanced Support</li>
                     </ul>
-                    <a href="#">Choose Plan</a>
+                    <a href="#pricing">Choose Plan</a>
                 </div>
                 <div class="box">
                     <div class="title">Professional</div>
-                    <img src="images/hosting-professional.png" alt="" />
+                    <img src="images/hosting-professional.png" alt="Professional hosting plan icon" />
                     <div class="price">
                         <span class="amount">$45</span>
                         <span class="time">Per Month</span>
@@ -762,7 +811,7 @@
                         <li>20 Databases</li>
                         <li>Professional Support</li>
                     </ul>
-                    <a href="#">Choose Plan</a>
+                    <a href="#pricing">Choose Plan</a>
                 </div>
             </div>
         </section>
@@ -786,7 +835,7 @@
                         </ul>
                     </div>
                     <div class="preview">
-                        <img src="images/video-preview.jpg" alt="" />
+                        <img src="images/video-preview.jpg" alt="Video preview thumbnail" />
                         <div class="info">Everything About The Virtual Hosts</div>
                     </div>
                 </div>
@@ -797,22 +846,22 @@
             <div class="container">
                 <div class="box">
                     <i class="far fa-user fa-2x fa-fw"></i>
-                    <span class="number" data-goal="150">300</span>
+                    <span class="number" data-goal="300">0</span>
                     <span class="text">Clients</span>
                 </div>
                 <div class="box">
                     <i class="fas fa-code fa-2x fa-fw"></i>
-                    <span class="number" data-goal="135">400</span>
+                    <span class="number" data-goal="400">0</span>
                     <span class="text">Projects</span>
                 </div>
                 <div class="box">
                     <i class="fas fa-globe-asia fa-2x fa-fw"></i>
-                    <span class="number" data-goal="50">12</span>
+                    <span class="number" data-goal="12">0</span>
                     <span class="text">Countries</span>
                 </div>
                 <div class="box">
                     <i class="far fa-money-bill-alt fa-2x fa-fw"></i>
-                    <span class="number" data-goal="500">500K</span>
+                    <span class="number" data-goal="500" data-suffix="K">0</span>
                     <span class="text">Money</span>
                 </div>
             </div>
@@ -828,19 +877,141 @@
                         similique
                         laborum dicta aperiam odit doloribus corporis.
                     </p>
-                    <img src="images/discount.png" alt="" />
+                    <img src="images/discount.png" alt="Discount promotion illustration" />
                 </div>
             </div>
             <div class="form">
                 <div class="content">
                     <h2>Request A Discount</h2>
-                    <form action="">
-                        <input class="input" type="text" placeholder="Your Name" name="name" />
-                        <input class="input" type="email" placeholder="Your Email" name="email" />
-                        <input class="input" type="text" placeholder="Your Phone" name="mobile" />
-                        <textarea class="input" placeholder="Tell Us About Your Needs" name="message"></textarea>
+                    <p id="discount-form-message" class="form-message" aria-live="polite"></p>
+                    <form id="discount-form" action="#" method="post" novalidate>
+                        <label class="sr-only" for="discount-name">Your Name</label>
+                        <input class="input" type="text" id="discount-name" placeholder="Your Name" name="name" required />
+                        <span class="field-error" data-error-for="name"></span>
+                        <label class="sr-only" for="discount-email">Your Email</label>
+                        <input class="input" type="email" id="discount-email" placeholder="Your Email" name="email" required />
+                        <span class="field-error" data-error-for="email"></span>
+                        <label class="sr-only" for="discount-mobile">Your Phone</label>
+                        <input class="input" type="text" id="discount-mobile" placeholder="Your Phone" name="mobile" required />
+                        <span class="field-error" data-error-for="mobile"></span>
+                        <label class="sr-only" for="discount-message">Your Message</label>
+                        <textarea class="input" id="discount-message" placeholder="Tell Us About Your Needs" name="message" required></textarea>
+                        <span class="field-error" data-error-for="message"></span>
                         <input type="submit" value="Send" />
                     </form>
+                </div>
+            </div>
+        </section>
+        <section class="case-study padding-section" id="case-study">
+            <div class="case-study-bg" aria-hidden="true"></div>
+            <span class="section-eyebrow section-eyebrow--light reveal">Portfolio Deep Dive</span>
+            <h2 class="main-heading reveal">Case Study</h2>
+            <p class="case-study-lead reveal">From static template to production-ready interactive system — engineering decisions documented.</p>
+
+            <div class="container">
+                <div class="case-metrics reveal-stagger">
+                    <div class="metric-card">
+                        <strong>14+</strong>
+                        <span>Sections Enhanced</span>
+                    </div>
+                    <div class="metric-card">
+                        <strong>7</strong>
+                        <span>JS Modules</span>
+                    </div>
+                    <div class="metric-card">
+                        <strong>0</strong>
+                        <span>Frameworks Used</span>
+                    </div>
+                    <div class="metric-card">
+                        <strong>100%</strong>
+                        <span>Vanilla Stack</span>
+                    </div>
+                </div>
+
+                <div class="case-grid reveal-stagger">
+                <article class="case-block">
+                    <h3>Project Evolution</h3>
+                    <p>This template began as a static, CSS-heavy multi-section layout. The goal was to ship interactivity without touching the visual system.</p>
+                    <div class="evolution-compare">
+                        <div class="evolution-card">
+                            <strong>Before</strong>
+                            <p>Static countdown values, fixed stats, hover-only mega menu, placeholder forms with no validation.</p>
+                        </div>
+                        <div class="evolution-arrow" aria-hidden="true">→</div>
+                        <div class="evolution-card evolution-card--after">
+                            <strong>After</strong>
+                            <p>Live countdown, animated stats on scroll, accessible mobile menu, validated forms, active nav tracking, and article filtering.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="case-block">
+                    <h3>Engineering Decisions</h3>
+                    <ul>
+                        <li><strong>Preserve CSS architecture:</strong> The original grid, variables, and animations stayed intact — behavior was layered on top.</li>
+                        <li><strong>Minimal vanilla JS:</strong> No frameworks. Each feature is an isolated module in one file, loaded with <code>defer</code>.</li>
+                        <li><strong>Refactor over rewrite:</strong> HTML semantics and accessibility were fixed in place instead of rebuilding the template.</li>
+                        <li><strong>Maintainability:</strong> CSS custom properties unify timing; JS uses data attributes as the single source of truth.</li>
+                    </ul>
+                </article>
+                <article class="case-block">
+                    <h3>What I Learned</h3>
+                    <ul>
+                        <li>How to work with large, section-based CSS systems without breaking visual consistency.</li>
+                        <li>How progressive enhancement turns static UI into interactive UX.</li>
+                        <li>How DOM APIs (IntersectionObserver, FormData) replace heavy libraries for common patterns.</li>
+                        <li>How to think like a frontend engineer: fix foundations first, then add behavior deliberately.</li>
+                    </ul>
+                </article>
+                </div>
+
+                <div class="case-timeline reveal">
+                    <h3>Transformation Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-dot">01</div>
+                            <h4>Audit</h4>
+                            <p>Fixed HTML semantics, CSS bugs, and accessibility foundations.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">02</div>
+                            <h4>Activate</h4>
+                            <p>Added vanilla JS for counters, countdown, forms, and navigation.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">03</div>
+                            <h4>Elevate</h4>
+                            <p>Layered premium design system without breaking original structure.</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">04</div>
+                            <h4>Document</h4>
+                            <p>Built case study section as a recruiter-ready product showcase.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-achievements reveal-stagger">
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-layer-group"></i></div>
+                        <div>
+                            <h4>Progressive Enhancement</h4>
+                            <p>Every feature degrades gracefully when JavaScript is unavailable.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-universal-access"></i></div>
+                        <div>
+                            <h4>Accessibility First</h4>
+                            <p>ARIA labels, keyboard navigation, and reduced-motion support built in.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <div>
+                            <h4>Performance Focus</h4>
+                            <p>Zero dependencies. CSS animations and IntersectionObserver only.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -851,17 +1022,17 @@
                 <h3>Madhj</h3>
                 <ul class="social">
                     <li>
-                        <a href="#" class="facebook">
+                        <a href="#header" class="facebook" aria-label="Madhj on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="twitter">
+                        <a href="#header" class="twitter" aria-label="Madhj on Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="youtube">
+                        <a href="#header" class="youtube" aria-label="Madhj on YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </li>
@@ -873,11 +1044,11 @@
             </div>
             <div class="box">
                 <ul class="links">
-                    <li><a href="#">Important Link 1</a></li>
-                    <li><a href="#">Important Link 2</a></li>
-                    <li><a href="#">Important Link 3</a></li>
-                    <li><a href="#">Important Link 4</a></li>
-                    <li><a href="#">Important Link 5</a></li>
+                    <li><a href="#Articles">Articles</a></li>
+                    <li><a href="#Gallery">Gallery</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#case-study">Case Study</a></li>
                 </ul>
             </div>
             <div class="box">
@@ -898,14 +1069,20 @@
                 </div>
             </div>
             <div class="box footer-gallery">
-                <img src="images/gallery-01.png" alt="" />
-                <img src="images/gallery-02.png" alt="" />
-                <img src="images/gallery-03.jpg" alt="" />
-                <img src="images/gallery-04.png" alt="" />
-                <img src="images/gallery-05.jpg" alt="" />
-                <img src="images/gallery-06.png" alt="" />
+                <img src="images/gallery-01.png" alt="Footer gallery image 1" />
+                <img src="images/gallery-02.png" alt="Footer gallery image 2" />
+                <img src="images/gallery-03.jpg" alt="Footer gallery image 3" />
+                <img src="images/gallery-04.png" alt="Footer gallery image 4" />
+                <img src="images/gallery-05.jpg" alt="Footer gallery image 5" />
+                <img src="images/gallery-06.png" alt="Footer gallery image 6" />
             </div>
         </div>
         <p class="copyright">Made With ❤️, By Ahmed Raed with My teacher Osama Elzero😁</p>
     </footer>
+    <div class="up">
+        <a href="#header" aria-label="Scroll to top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </div>
+    <script src="js/main.js" defer></script>
 </body>
